@@ -19,7 +19,6 @@ class Music_player(Tk):
         super().__init__()
         self.height = 530
         self.title("Omnific Music Player")
-        # self.iconbitmap("")
         self.width = 900
         self.geometry(f"{self.width}x{self.height}")
         self.minsize(width=self.width, height=self.height)
@@ -31,6 +30,11 @@ class Music_player(Tk):
         self.filename = NONE
         self.myslider2  = NONE
         self.song =NONE
+        
+    
+    def icon_image(self):
+        self.p1 = PhotoImage(file = 'images/favicon.png')
+        self.iconphoto(False, self.p1)
         
         
     def Music_Display(self):
@@ -201,6 +205,7 @@ class Music_player(Tk):
 if __name__ == '__main__':
     window = Music_player()
     window.Title()
+    window.icon_image()
     window.Music_Display()
     window.music_playing()
     window.music_volume()
